@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --bg: 242 246 252;
+    --bg-secondary: 255 255 255;
+    --text: 15 23 42;
+    --muted: 71 85 105;
+    --border: 148 163 184;
+    --glow-a: 59 130 246;
+    --glow-b: 139 92 246;
+  }
+
+  html[data-theme='dark'] {
+    color-scheme: dark;
+    --bg: 2 6 23;
+    --bg-secondary: 15 23 42;
+    --text: 241 245 249;
+    --muted: 148 163 184;
+    --border: 71 85 105;
+    --glow-a: 96 165 250;
+    --glow-b: 167 139 250;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-[rgb(var(--bg))] font-sans text-[rgb(var(--text))] antialiased transition-colors duration-300;
+    background-image:
+      radial-gradient(circle at top, rgba(var(--glow-a), 0.12), transparent 32%),
+      linear-gradient(180deg, rgba(var(--bg-secondary), 0.65), rgba(var(--bg), 1));
+  }
+
+  * {
+    @apply border-[rgb(var(--border))];
+  }
+
+  ::selection {
+    background: rgba(var(--glow-a), 0.25);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-[rgb(var(--text))];
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(24px);
+  }
+
+  html[data-theme='dark'] .glass-panel {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.55);
+    box-shadow: 0 20px 60px rgba(2, 6, 23, 0.45);
+  }
+
+  .section-shell {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(24px);
+  }
+
+  .section-shell::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset-inline: 2rem;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.45),
+      transparent
+    );
+    animation: section-sheen 7s ease-in-out infinite;
+  }
+
+  .section-shell::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: auto -20% -35% auto;
+    width: 14rem;
+    height: 14rem;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(var(--glow-a), 0.16), transparent 70%);
+    filter: blur(10px);
+    opacity: 0.5;
+    animation: section-orbit 14s ease-in-out infinite;
+  }
+
+  html[data-theme='dark'] .section-shell::before {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+  }
+
+  html[data-theme='dark'] .section-shell {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.55);
+    box-shadow: 0 20px 60px rgba(2, 6, 23, 0.45);
+  }
+
+  .soft-border {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+  }
+
+  html[data-theme='dark'] .soft-border {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.6);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent;
+  }
+
+  .animated-gradient-border {
+    background:
+      linear-gradient(rgba(var(--bg-secondary), 0.72), rgba(var(--bg-secondary), 0.72))
+        padding-box,
+      linear-gradient(
+          120deg,
+          rgba(59, 130, 246, 0.85),
+          rgba(34, 211, 238, 0.7),
+          rgba(139, 92, 246, 0.85)
+        )
+        border-box;
+    background-size: 100% 100%, 220% 220%;
+    animation: project-border-flow 8s linear infinite;
+    box-shadow: 0 18px 42px rgba(59, 130, 246, 0.12);
+  }
+
+  html[data-theme='dark'] .animated-gradient-border {
+    box-shadow: 0 22px 48px rgba(59, 130, 246, 0.16);
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(59,130,246,0.28)] hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(99,102,241,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400;
+    background-size: 180% 180%;
+    animation: button-glow 7s ease-in-out infinite;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/70 px-5 py-3 text-sm font-semibold text-[rgb(var(--text))] backdrop-blur-sm hover:-translate-y-0.5 hover:border-blue-300/70 hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400;
+  }
+
+  html[data-theme='dark'] .secondary-button {
+    @apply border-white/10 bg-slate-900/70 hover:border-blue-400/40 hover:text-blue-300;
+  }
+}
+
+@keyframes project-border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes section-sheen {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateX(-3%);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(3%);
+  }
+}
+
+@keyframes section-orbit {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(-2rem, -1.4rem, 0) scale(1.08);
+    opacity: 0.6;
+  }
+}
+
+@keyframes button-glow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (min-width: 640px) {
+  @layer components {
+    .section-shell {
+      padding: 2.5rem 2rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @layer components {
+    .section-shell {
+      padding-inline: 2.5rem;
+    }
+  }
+}
