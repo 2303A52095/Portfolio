@@ -141,11 +141,11 @@ export const portfolioData = {
       ],
     },
     {
-      title: 'Loan Approval Prediction Internship Project',
+      title: 'Loan Prediction',
       organization: 'Vaidsys Technologies',
-      period: 'Internship Experience',
+      period: 'Machine Learning Internship',
       description:
-        'Worked on a loan approval prediction workflow using machine learning, supported by formal internship documentation, a project report, and the final project file.',
+        'Completed a machine learning internship focused on loan prediction, covering the loan approval workflow with supporting internship documents, a project report, and the final project file.',
       documents: [
         {
           label: 'Internship Certificate',
@@ -202,7 +202,7 @@ export const portfolioData = {
     {
       title: 'Schooling',
       organization: 'Sri Chaitanya',
-      period: 'School Education',
+      period: '2021',
       description:
         'Built the academic fundamentals and discipline that led into technical studies.',
     },

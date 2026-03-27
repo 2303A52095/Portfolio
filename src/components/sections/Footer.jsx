@@ -8,17 +8,8 @@ export function Footer({ socialLinks }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.45 }}
         transition={{ duration: 0.55, ease: 'easeOut' }}
-        className="glass-panel mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-5 px-6 py-6 text-center sm:flex-row sm:text-left"
+        className="glass-panel mx-auto flex w-full max-w-7xl justify-center px-6 py-6"
       >
-        <div>
-          <p className="font-display text-lg font-bold">
-            Chirra Ramcharan<span className="gradient-text">.</span>
-          </p>
-          <p className="mt-1 text-sm text-[rgb(var(--muted))]">
-            AI/ML Developer Portfolio | B.Tech CSE (AI & ML)
-          </p>
-        </div>
-
         <motion.div
           initial="hidden"
           whileInView="visible"

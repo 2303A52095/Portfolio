@@ -49,7 +49,7 @@ function SkillCard({ skill, index }) {
         whileHover={{ y: -8, scale: 1.01 }}
         className="soft-border rounded-[1.75rem] p-5"
       >
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
           <div className="flex items-center gap-3">
             <motion.div
               animate={{ rotate: [0, 4, -4, 0], scale: [1, 1.04, 1] }}
@@ -62,7 +62,6 @@ function SkillCard({ skill, index }) {
               <h3 className="text-lg font-semibold">{skill.title}</h3>
             </div>
           </div>
-          <span className="text-sm font-semibold text-blue-400">{skill.level}%</span>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -79,22 +78,6 @@ function SkillCard({ skill, index }) {
               </span>
             )
           })}
-        </div>
-
-        <div className="mt-5 h-2 overflow-hidden rounded-full bg-[rgba(var(--border),0.2)]">
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: `${skill.level}%` }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.8, delay: index * 0.08 }}
-            className="relative h-full rounded-full bg-gradient-to-r from-blue-500 to-violet-500"
-          >
-            <motion.span
-              animate={{ x: ['-120%', '240%'] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut', delay: index * 0.12 }}
-              className="absolute inset-y-0 w-12 bg-white/25 blur-sm"
-            />
-          </motion.div>
         </div>
       </motion.article>
     </Reveal>

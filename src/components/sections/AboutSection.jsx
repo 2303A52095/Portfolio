@@ -24,12 +24,44 @@ export function AboutSection({ about }) {
               <motion.div
                 animate={{ y: [0, -2, 0] }}
                 transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                className="overflow-hidden rounded-[1.75rem] border border-white/15 bg-[rgba(var(--bg-secondary),0.9)] p-3 shadow-[0_18px_40px_rgba(15,23,42,0.12)]"
+                className="relative isolate overflow-visible rounded-full p-3"
               >
+                <motion.span
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                  className="absolute inset-[-0.65rem] rounded-full border border-blue-400/30 border-dashed"
+                />
+                <motion.span
+                  animate={{ rotate: -360, scale: [1, 1.03, 1] }}
+                  transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+                  className="absolute inset-[-1.15rem] rounded-full bg-[conic-gradient(from_90deg,rgba(59,130,246,0.22),rgba(139,92,246,0.12),transparent_65%,rgba(59,130,246,0.22))] blur-md"
+                />
+                <motion.div
+                  animate={{
+                    boxShadow: [
+                      '0 18px 40px rgba(15,23,42,0.12)',
+                      '0 24px 52px rgba(59,130,246,0.22)',
+                      '0 18px 40px rgba(15,23,42,0.12)',
+                    ],
+                  }}
+                  transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
+                  className="relative overflow-hidden rounded-full border border-white/15 bg-[rgba(var(--bg-secondary),0.9)]"
+                >
                 <img
                   src={profilePhotoSrc}
                   alt="Chirra Ramcharan"
-                  className="aspect-[4/5] w-full max-w-[15rem] rounded-[1.2rem] object-cover object-center"
+                  className="aspect-square w-full max-w-[15rem] rounded-full object-cover object-center"
+                />
+                </motion.div>
+                <motion.span
+                  animate={{ y: [0, -10, 0], opacity: [0.35, 0.9, 0.35] }}
+                  transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute right-3 top-4 h-4 w-4 rounded-full bg-blue-400/70 blur-[1px]"
+                />
+                <motion.span
+                  animate={{ y: [0, 8, 0], opacity: [0.25, 0.7, 0.25] }}
+                  transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+                  className="absolute bottom-5 left-2 h-3 w-3 rounded-full bg-violet-400/70 blur-[1px]"
                 />
               </motion.div>
 
