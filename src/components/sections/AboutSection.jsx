@@ -3,6 +3,8 @@ import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function AboutSection({ about }) {
+  const profilePhotoSrc = `${import.meta.env.BASE_URL}profile-photo.png`
+
   return (
     <section id="about" className="section-shell scroll-mt-24">
       <SectionHeading
@@ -25,7 +27,7 @@ export function AboutSection({ about }) {
                 className="overflow-hidden rounded-[1.75rem] border border-white/15 bg-[rgba(var(--bg-secondary),0.9)] p-3 shadow-[0_18px_40px_rgba(15,23,42,0.12)]"
               >
                 <img
-                  src="/profile-photo.png"
+                  src={profilePhotoSrc}
                   alt="Chirra Ramcharan"
                   className="aspect-[4/5] w-full max-w-[15rem] rounded-[1.2rem] object-cover object-center"
                 />

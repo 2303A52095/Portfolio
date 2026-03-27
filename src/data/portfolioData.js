@@ -10,6 +10,9 @@ import {
   FiServer,
 } from 'react-icons/fi'
 
+const baseUrl = import.meta.env.BASE_URL
+const withBase = (path) => `${baseUrl}${path.replace(/^\//, '')}`
+
 export const portfolioData = {
   hero: {
     name: 'Chirra Ramcharan',
@@ -21,7 +24,7 @@ export const portfolioData = {
       'Building web applications with clean user experiences',
       'Turning academic learning into real project delivery',
     ],
-    resumeHref: '/Chirra_Ramcharan_Resume.pdf',
+    resumeHref: withBase('/Chirra_Ramcharan_Resume.pdf'),
   },
   about: {
     summary:
@@ -58,7 +61,7 @@ export const portfolioData = {
       badge: 'SkillCraft Technology',
       period: 'March 2026 - April 2026',
       verified: true,
-      offerLetter: '/Offer_Letter.pdf',
+      offerLetter: withBase('/Offer_Letter.pdf'),
       description:
         'Developed during a Web Development Internship at SkillCraft Technology as a responsive quiz application with smooth animations and interactive user experience.',
       bullets: [
@@ -77,7 +80,7 @@ export const portfolioData = {
       badge: 'SkillCraft Technology',
       period: 'March 2026 - April 2026',
       verified: true,
-      offerLetter: '/Offer_Letter.pdf',
+      offerLetter: withBase('/Offer_Letter.pdf'),
       description:
         'Developed a responsive stopwatch web application using HTML, CSS, and JavaScript with clean interactions and reliable timing behavior.',
       bullets: [
@@ -102,8 +105,8 @@ export const portfolioData = {
       tags: ['Python', 'OpenCV', 'Tkinter', 'ORB', 'SSIM'],
       github: 'https://github.com/chirra-ramcharan/fake-currency-detection',
       datasetHref: 'https://www.kaggle.com/code/raviiloveyou/fake-currency-detection',
-      codeFileHref: '/fake-currency-project-code.py',
-      reportHref: '/fake-currency-detector-report.pdf',
+      codeFileHref: withBase('/fake-currency-project-code.py'),
+      reportHref: withBase('/fake-currency-detector-report.pdf'),
       preview: 'vision',
     },
   ],
@@ -117,23 +120,23 @@ export const portfolioData = {
       documents: [
         {
           label: 'Letter of Recommendation',
-          href: '/plasmid-letter-of-recommendation.pdf',
+          href: withBase('/plasmid-letter-of-recommendation.pdf'),
         },
         {
           label: 'Internship Certificate',
-          href: '/plasmid-internship-certificate.pdf',
+          href: withBase('/plasmid-internship-certificate.pdf'),
         },
         {
           label: 'Industrial Certificate',
-          href: '/plasmid-industrial-certificate.pdf',
+          href: withBase('/plasmid-industrial-certificate.pdf'),
         },
         {
           label: 'Minor Project: Report on K Means Clustering',
-          href: '/plasmid-k-means-report.pdf',
+          href: withBase('/plasmid-k-means-report.pdf'),
         },
         {
           label: 'Major Project: Detailed Report on Spam News Detection',
-          href: '/plasmid-spam-news-report.pdf',
+          href: withBase('/plasmid-spam-news-report.pdf'),
         },
       ],
     },
@@ -146,19 +149,19 @@ export const portfolioData = {
       documents: [
         {
           label: 'Internship Certificate',
-          href: '/loan-approval-internship-certificate.pdf',
+          href: withBase('/loan-approval-internship-certificate.pdf'),
         },
         {
           label: 'Offer Letter',
-          href: '/loan-approval-offer-letter.pdf',
+          href: withBase('/loan-approval-offer-letter.pdf'),
         },
         {
           label: 'Project Report',
-          href: '/loan-approval-prediction-report.pdf',
+          href: withBase('/loan-approval-prediction-report.pdf'),
         },
         {
           label: 'Project PDF',
-          href: '/loan-approval-prediction-project.pdf',
+          href: withBase('/loan-approval-prediction-project.pdf'),
         },
       ],
     },
@@ -166,19 +169,19 @@ export const portfolioData = {
   certifications: [
     {
       title: 'Microsoft Azure AI Fundamentals',
-      href: '/microsoft-azure-ai-fundamentals.pdf',
+      href: withBase('/microsoft-azure-ai-fundamentals.pdf'),
     },
     {
       title: 'Python Full Stack',
-      href: '/python-full-stack.pdf',
+      href: withBase('/python-full-stack.pdf'),
     },
     {
       title: 'Google Virtual Internship AI/ML',
-      href: '/google-virtual-internship-aiml.pdf',
+      href: withBase('/google-virtual-internship-aiml.pdf'),
     },
     {
       title: 'Data Science Master Virtual Internship',
-      href: '/data-science-master-virtual-internship.pdf',
+      href: withBase('/data-science-master-virtual-internship.pdf'),
     },
   ],
   education: [
