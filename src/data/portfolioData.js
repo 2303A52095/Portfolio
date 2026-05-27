@@ -56,6 +56,37 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: 'HireSight - Job Scam Detection Platform',
+      typeLabel: 'AI Web Application',
+      badge: 'Academic Team Project',
+      description:
+        'An AI-powered web application that detects potentially fraudulent job postings by analyzing descriptions, company details, and suspicious scam patterns.',
+      bullets: [
+        'Built job scam checking with risk score, risk level, and clear reasons for flagged content',
+        'Added company verification and scam reporting flows for safer job-search decisions',
+        'Designed a responsive frontend connected to an Express backend with analysis, company, and report endpoints',
+      ],
+      tags: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'Machine Learning'],
+      liveDemo: 'https://2303a52095.github.io/HireSight-Job-Scam-Detection/',
+      github: 'https://github.com/2303A52095/HireSight-Job-Scam-Detection',
+      preview: 'hiresight',
+    },
+    {
+      title: 'NexGoRide DevOps Project',
+      typeLabel: 'DevOps Project',
+      badge: 'GitHub Project',
+      description:
+        'A DevOps-focused NexGoRide project demonstrating repository-based project delivery, deployment readiness, and practical version control workflow.',
+      bullets: [
+        'Organized the project source code in GitHub for maintainable collaboration and tracking',
+        'Focused on DevOps project practices including version control, build readiness, and deployment workflow',
+        'Shows practical understanding of software delivery beyond local development',
+      ],
+      tags: ['DevOps', 'GitHub', 'CI/CD', 'Version Control', 'Deployment'],
+      github: 'https://github.com/2303A52095/DEVOPS-PROJECT-NexGoRide',
+      preview: 'devops',
+    },
+    {
       title: 'Quiz Application with Animations',
       typeLabel: 'Internship Project',
       badge: 'SkillCraft Technology',
@@ -168,19 +199,37 @@ export const portfolioData = {
   ],
   certifications: [
     {
+      title: 'Dynamic Programming Camp',
+      issuer: 'AlgoUniversity',
+      recipient: 'Chirra Ramcharan',
+      mentor: 'Codeforces Master, Manas Kumar Verma',
+      description:
+        'Successfully completed the Dynamic Programming Camp and conquered Matrix Exponentiation and SQRT Decomposition.',
+      href: 'https://drive.google.com/drive/folders/15sySdxEgfJFIsmXXcjFRFr-Mw7oykgL1?usp=sharing',
+      featured: true,
+    },
+    {
       title: 'Microsoft Azure AI Fundamentals',
+      issuer: 'Microsoft',
+      description: 'Completed Microsoft Azure AI Fundamentals certification.',
       href: withBase('/microsoft-azure-ai-fundamentals.pdf'),
     },
     {
       title: 'Python Full Stack',
+      issuer: 'Python Full Stack',
+      description: 'Completed Python Full Stack certification.',
       href: withBase('/python-full-stack.pdf'),
     },
     {
       title: 'Google Virtual Internship AI/ML',
+      issuer: 'Google',
+      description: 'Completed Google Virtual Internship focused on AI/ML.',
       href: withBase('/google-virtual-internship-aiml.pdf'),
     },
     {
       title: 'Data Science Master Virtual Internship',
+      issuer: 'Data Science Master',
+      description: 'Completed Data Science Master Virtual Internship.',
       href: withBase('/data-science-master-virtual-internship.pdf'),
     },
   ],

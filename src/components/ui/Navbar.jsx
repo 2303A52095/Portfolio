@@ -3,9 +3,11 @@ import { ThemeToggle } from './ThemeToggle'
 
 const navItems = [
   { label: 'About', href: '#about' },
+  { label: 'Education', href: '#education' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#internships' },
+  { label: 'Certificates', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ]
 

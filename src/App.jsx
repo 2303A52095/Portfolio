@@ -91,6 +91,9 @@ function App() {
             <AboutSection about={portfolioData.about} />
           </motion.div>
           <motion.div variants={sectionVariants}>
+            <EducationSection education={portfolioData.education} />
+          </motion.div>
+          <motion.div variants={sectionVariants}>
             <SkillsSection skills={portfolioData.skills} />
           </motion.div>
           <motion.div variants={sectionVariants}>
@@ -101,9 +104,6 @@ function App() {
           </motion.div>
           <motion.div variants={sectionVariants}>
             <CertificationsSection certifications={portfolioData.certifications} />
-          </motion.div>
-          <motion.div variants={sectionVariants}>
-            <EducationSection education={portfolioData.education} />
           </motion.div>
           <motion.div variants={sectionVariants}>
             <ContactSection contact={portfolioData.contact} />

@@ -8,6 +8,7 @@ import {
   FiExternalLink,
   FiFileText,
   FiGithub,
+  FiShield,
 } from 'react-icons/fi'
 
 function ProjectPreview({ preview }) {
@@ -111,6 +112,63 @@ function ProjectPreview({ preview }) {
               </div>
             </div>
           </motion.div>
+        </motion.div>
+      </motion.div>
+    )
+  }
+
+  if (preview === 'hiresight') {
+    return (
+      <motion.div
+        animate={{ y: [0, -4, 0] }}
+        transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
+        className="relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-[linear-gradient(160deg,rgba(8,47,73,0.92),rgba(22,101,52,0.34))] p-4"
+      >
+        <div className="mb-4 flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+          <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+          <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+        </div>
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.35 }}
+          className="rounded-[1.4rem] border border-emerald-300/20 bg-slate-950/70 p-5"
+        >
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                HireSight
+              </p>
+              <h4 className="mt-2 text-xl font-bold text-white">Scam Risk Analysis</h4>
+            </div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-300/20 bg-emerald-400/10 text-emerald-200">
+              <FiShield className="text-2xl" />
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
+              <span>Risk Score</span>
+              <span className="font-semibold text-amber-200">72%</span>
+            </div>
+            <div className="h-2 rounded-full bg-white/10">
+              <div className="h-2 w-[72%] rounded-full bg-gradient-to-r from-emerald-400 via-amber-300 to-rose-400" />
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-3">
+            {['Registration fee requested', 'Personal email contact', 'Unrealistic salary claim'].map(
+              (item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+                >
+                  <span className="h-2 w-2 rounded-full bg-amber-300" />
+                  <span>{item}</span>
+                </div>
+              ),
+            )}
+          </div>
         </motion.div>
       </motion.div>
     )
@@ -314,18 +372,34 @@ export function ProjectCard({ project }) {
                   <FiArrowUpRight />
                 </motion.a>
               ) : null}
-              <motion.a
-                whileHover={{ y: -3 }}
-                whileTap={{ scale: 0.98 }}
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-button"
-              >
-                <FiGithub />
-                View Code
-                <FiArrowUpRight />
-              </motion.a>
+              {project.presentationHref ? (
+                <motion.a
+                  whileHover={{ y: -3 }}
+                  whileTap={{ scale: 0.98 }}
+                  href={project.presentationHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-button"
+                >
+                  <FiFileText />
+                  Presentation
+                  <FiArrowUpRight />
+                </motion.a>
+              ) : null}
+              {project.github ? (
+                <motion.a
+                  whileHover={{ y: -3 }}
+                  whileTap={{ scale: 0.98 }}
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-button"
+                >
+                  <FiGithub />
+                  View Code
+                  <FiArrowUpRight />
+                </motion.a>
+              ) : null}
             </div>
           </div>
 
