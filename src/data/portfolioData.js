@@ -24,7 +24,9 @@ export const portfolioData = {
       'Building web applications with clean user experiences',
       'Turning academic learning into real project delivery',
     ],
-    resumeHref: withBase('/Chirra_Ramcharan_Resume.pdf'),
+    resumeHref:
+      'https://drive.google.com/file/d/10jxbUsNCwKA8QQP38Xy1DEV_7dWNXyRv/view?usp=drive_link',
+    resumeEmbedHref: 'https://drive.google.com/file/d/10jxbUsNCwKA8QQP38Xy1DEV_7dWNXyRv/preview',
   },
   about: {
     summary:

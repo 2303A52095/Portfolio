@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { FiArrowRight, FiFileText, FiGithub, FiLinkedin, FiX } from 'react-icons/fi'
+import { FiArrowRight, FiExternalLink, FiFileText, FiGithub, FiLinkedin, FiX } from 'react-icons/fi'
 import { portfolioData } from '../../data/portfolioData'
 import { Reveal } from '../ui/Reveal'
 
@@ -137,116 +137,33 @@ export function HeroSection({ hero }) {
           <div className="mx-auto flex h-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-white/15 bg-white shadow-2xl">
             <div className="flex items-center justify-between gap-4 border-b border-slate-200 px-4 py-3 text-slate-900 sm:px-5">
               <p className="font-semibold">Chirra Ramcharan Resume</p>
-              <button
-                type="button"
-                onClick={() => setIsResumeOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-100"
-                aria-label="Close resume viewer"
-              >
-                <FiX />
-              </button>
-            </div>
-            <div className="min-h-0 flex-1 overflow-y-auto bg-slate-100 p-4 text-slate-900 sm:p-6">
-              <div className="mx-auto max-w-4xl bg-white p-6 shadow-xl sm:p-10">
-                <div className="border-b border-slate-200 pb-6">
-                  <h2 className="text-3xl font-bold tracking-tight">Chirra Ramcharan</h2>
-                  <p className="mt-2 text-base font-semibold text-blue-700">
-                    AI/ML Developer | Full Stack Projects | B.Tech CSE (AI & ML)
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
-                    <span>{portfolioData.contact.email}</span>
-                    <span>{portfolioData.contact.phone}</span>
-                    <span>{portfolioData.contact.linkedin}</span>
-                    <span>{portfolioData.contact.github}</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid gap-7">
-                  <section>
-                    <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
-                      Profile
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-700">
-                      {portfolioData.about.summary}
-                    </p>
-                  </section>
-
-                  <section>
-                    <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
-                      Skills
-                    </h3>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {portfolioData.skills.flatMap((skill) => skill.items).map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </section>
-
-                  <section>
-                    <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
-                      Projects
-                    </h3>
-                    <div className="mt-3 grid gap-4">
-                      {portfolioData.projects.map((project) => (
-                        <article key={project.title}>
-                          <h4 className="font-semibold text-slate-950">{project.title}</h4>
-                          <p className="mt-1 text-sm leading-6 text-slate-700">
-                            {project.description}
-                          </p>
-                        </article>
-                      ))}
-                    </div>
-                  </section>
-
-                  <section>
-                    <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
-                      Experience
-                    </h3>
-                    <div className="mt-3 grid gap-4">
-                      {portfolioData.internships.map((item) => (
-                        <article key={item.title}>
-                          <div className="flex flex-wrap items-baseline justify-between gap-2">
-                            <h4 className="font-semibold text-slate-950">{item.title}</h4>
-                            <span className="text-xs font-semibold text-slate-500">
-                              {item.period}
-                            </span>
-                          </div>
-                          <p className="mt-1 text-sm font-medium text-blue-700">
-                            {item.organization}
-                          </p>
-                          <p className="mt-1 text-sm leading-6 text-slate-700">
-                            {item.description}
-                          </p>
-                        </article>
-                      ))}
-                    </div>
-                  </section>
-
-                  <section>
-                    <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
-                      Education
-                    </h3>
-                    <div className="mt-3 grid gap-3">
-                      {portfolioData.education.map((item) => (
-                        <article key={item.title}>
-                          <div className="flex flex-wrap items-baseline justify-between gap-2">
-                            <h4 className="font-semibold text-slate-950">{item.title}</h4>
-                            <span className="text-xs font-semibold text-slate-500">
-                              {item.period}
-                            </span>
-                          </div>
-                          <p className="text-sm text-slate-700">{item.organization}</p>
-                        </article>
-                      ))}
-                    </div>
-                  </section>
-                </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={hero.resumeHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-100"
+                  aria-label="Open resume PDF"
+                >
+                  <FiExternalLink />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setIsResumeOpen(false)}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-100"
+                  aria-label="Close resume viewer"
+                >
+                  <FiX />
+                </button>
               </div>
+            </div>
+            <div className="min-h-0 flex-1 bg-slate-100">
+              <iframe
+                key={hero.resumeEmbedHref}
+                src={hero.resumeEmbedHref}
+                title="Chirra Ramcharan Resume PDF"
+                className="h-full min-h-[70vh] w-full border-0"
+              />
             </div>
           </div>
         </div>
